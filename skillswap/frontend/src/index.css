@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: #0A0A0F; }
+  ::-webkit-scrollbar-thumb { background: #6C63FF; border-radius: 2px; }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  .glass-card {
+    @apply glass rounded-2xl;
+  }
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-xl font-medium hover:bg-primary-dark transition-all duration-200 shadow-lg hover:shadow-primary/30 active:scale-95;
+  }
+  .btn-ghost {
+    @apply border border-white/10 text-white/80 px-6 py-3 rounded-xl font-medium hover:bg-white/5 transition-all duration-200;
+  }
+  .input {
+    @apply w-full bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/30 transition-all;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium;
+  }
+  .section-title {
+    @apply font-display text-3xl font-bold;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-accent-cyan to-primary bg-clip-text text-transparent;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
